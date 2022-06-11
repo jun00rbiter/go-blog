@@ -1,0 +1,33 @@
+settings:
+  # WindowsのWSLでdockerを動作させている場合で、コードが/mnt/<drive>に配置されている場合、
+  # inotifyが働かないので、ポーリングで動作するようにforce:trueに変更する
+  legacy:
+    force: false
+    interval: 1s
+server:
+  open: false
+  port: 5002
+  host: 0.0.0.0
+schema:
+  - name: go-blog
+    path: app
+    commands:
+      build:
+        status: true
+        method: go build -o /dist/go-blog entrypoints/production/main.go
+      run:
+        status: true
+        method: /dist/go-blog
+    watcher:
+      extensions:
+        - go
+      paths:
+        - .
+      scripts:
+        - command: go mod tidy
+          type: before
+          path: app
+          output: true
+      ignored_paths:
+        - .git
+        - .realize
