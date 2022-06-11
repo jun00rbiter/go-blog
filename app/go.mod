@@ -1,4 +1,4 @@
-module github.com/jun00rbiter/go-blog
+module github.com/jun00rbiter/go-blog/app
 
 go 1.18
 

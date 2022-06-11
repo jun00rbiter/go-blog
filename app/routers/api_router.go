@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/jun00rbiter/go-blog/controllers"
+	"github.com/jun00rbiter/go-blog/app/controllers"
 )
 
 // RegisterAPIRouter は、APIのルーティングを定義する

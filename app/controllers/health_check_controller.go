@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/jun00rbiter/go-blog/types/rest"
+	"github.com/jun00rbiter/go-blog/app/types/rest"
 )
 
 // GetHealthCheck はヘルスチェックのController
